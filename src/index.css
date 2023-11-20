@@ -6,6 +6,9 @@
 body{
   font-family: 'Montserrat', sans-serif;
   background-image: url("../public/images/Wallpaper-RaM.png");
+  background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
 }

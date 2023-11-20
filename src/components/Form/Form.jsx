@@ -1,7 +1,8 @@
 import { useState } from "react";
 import validation from "../../validation";
+import './Form.css'
 
-const Form = () => {
+const Form = ({login}) => {
 
   const [inputData, setInputData] = useState({
     email: '',
@@ -27,31 +28,51 @@ const Form = () => {
     }))
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    login(inputData);
+  };
 
   return (
-    <div>
-      <form>
+    <div className="divForm">
+      <form onSubmit={handleSubmit} className="formLogin">
         <label>Email</label>
-        <input 
-        type="email" 
-        key='email'
-        placeholder="Email..."
-        value={inputData.email}
-        name="email"
-        onChange={handleChange}
-        />
+        <input
+          type="email"
+          key="email"
+          value={inputData.email}
+          onChange={handleChange}
+          name="email"
+          class="input"
+          placeholder="Email..."
+        ></input>
+        {errors.email && <p className="errors">{errors.email}</p>}
 
         <label>Password</label>
-        <input 
-        type="password"
-        key='password'
-        placeholder="Email..."
-        value={inputData.password}
-        name="password"
-        onChange={handleChange}
-        />
+        <input
+          type="password"
+          key="password"
+          value={inputData.password}
+          onChange={handleChange}
+          name="password"
+          class="input"
+          placeholder="Password..."
+        ></input>
+        {errors.password && <p className="errors">{errors.password}</p>}
 
-        <button type="submit">Submit</button>
+        <button 
+        class="button" 
+        data-text="Awesome" 
+        type="submit" 
+        /* disabled={errors.email || errors.password} */>
+
+          <span class="actual-text">&nbsp;Submit&nbsp;</span>
+          <span aria-hidden="true" class="hover-text">
+            &nbsp;Submit&nbsp;
+          </span>
+
+        </button>
       </form>
     </div>
   );

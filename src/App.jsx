@@ -16,20 +16,25 @@ function App() {
 
    const location = useLocation() // Me devuelve el pathName, donde estoy parado.
 
-   const [acces, setAcces] = useState(false)
+   const [access, setAccess] = useState(false)
 
    const EMAIL = 'federuizgei@gmail.com'
    const PASSWORD = 'Fede123'
 
    const login = (userData) => {
       if(userData.email === EMAIL && userData.password === PASSWORD){
-         setAcces(true)
+         setAccess(true)
          navigate('/home')
       }
    }
 
+   const logOut = () => {
+      setAccess(false)
+   }
+
    useEffect(() => {
-      !access && navigate('/');
+      //!access && navigate('/');
+      !access && navigate('/home');
    }, [access]);
 
 
@@ -56,13 +61,13 @@ function App() {
 
       <div className='App'>
             {
-               location.pathname !== '/' && <NavBar onSearch={onSearch}/> //Si se cumple los primero, muestra el Nav
+               location.pathname !== '/' && <NavBar onSearch={onSearch} logOut={logOut}/> //Si se cumple los primero, muestra el Nav
             }
             <Routes>
             <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/detail/:id' element={<Detail/>}/>
-            <Route path='/' element={<Form/>}/>
+            <Route path='/' element={<Form login={login} access={access}/>}/>
 
             </Routes>
       </div>

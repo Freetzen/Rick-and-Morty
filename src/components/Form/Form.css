@@ -1,19 +1,57 @@
-.NavBar{
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.478);
+.divForm{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 75px;
+    height: 100vh;
 }
 
-.NavBar .logoNavBar{
-    width: 60px;
+.errors{
+    color: #37FF8B;
+    margin-top: 3px;
 }
 
+.formLogin{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.478);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.formLogin label{
+    color: #37FF8B;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.input::placeholder{
+    color: white;
+}
+
+.labPassword{
+    margin-bottom: 15px;
+}
+
+.input {
+    color: #37FF8B;
+    border: 2px solid #37FF8B;
+    border-radius: 10px;
+    padding: 15px 5px 15px 5px;
+    font-size: 17px;
+    background: transparent;
+    max-width: 190px;
+
+   }
+   
+   .input:active {
+    box-shadow: 2px 2px 15px #37FF8B inset;
+   }
+   
 /* === removing default button style ===*/
-.button-nav {
+.button {
     margin: 0;
+    margin-top: 20px;
     height: auto;
     background: transparent;
     padding: 0;
@@ -22,14 +60,14 @@
   }
   
   /* button styling */
-  .button-nav {
+  .button {
     --border-right: 6px;
     --text-stroke-color: rgba(255,255,255,0.6);
     --animation-color: #37FF8B;
     --fs-size: 2em;
-    letter-spacing: 1.5px;
+    letter-spacing: 3px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: var(--fs-size);
     font-family: "Arial";
     position: relative;
     text-transform: uppercase;
@@ -37,7 +75,7 @@
     -webkit-text-stroke: 1px var(--text-stroke-color);
   }
   /* this is the text, when you hover on button */
-  .hover-text-nav {
+  .hover-text {
     position: absolute;
     box-sizing: border-box;
     content: attr(data-text);
@@ -50,7 +88,7 @@
     -webkit-text-stroke: 1px var(--animation-color);
   }
   /* hover */
-  .button-nav:hover .hover-text-nav {
+  .button:hover .hover-text {
     width: 100%;
     filter: drop-shadow(0 0 23px var(--animation-color))
   }
