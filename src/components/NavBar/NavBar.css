@@ -1,0 +1,12 @@
+.NavBar{
+    width: 100%;
+    background-color: #d8fbfaa7;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+}
+
+.NavBar .logoNavBar{
+    width: 60px;
+}
