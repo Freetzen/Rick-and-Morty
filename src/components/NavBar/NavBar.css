@@ -5,6 +5,9 @@
     justify-content: space-around;
     align-items: center;
     height: 75px;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
 }
 
 .NavBar .logoNavBar{

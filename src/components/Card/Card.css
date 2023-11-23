@@ -1,13 +1,48 @@
-.cardPeque{
-    background-color: rgba(255, 255, 255, 0.627);
-    text-align: center;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 30px;
-    margin-left: 30px;
+.buttonLike{
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
 }
 
 .imgRaM{
     border-radius: 10px;
-    margin-bottom: 20px;
 }
+
+.card {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.478);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+  }
+
+  .card::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #37ff8a64 0%, #00dbde 100% );
+    filter: blur(20px);
+  }
+
+  
+  .card:hover::after {
+    filter: blur(30px);
+  }
+  
+  .infoRaM{
+    color: #37FF8B;
+    font-size: 20px;
+  }
+
+  .desc{
+    color: white;
+  }

@@ -1,0 +1,20 @@
+.divButton{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    height: 25px;
+}
+
+.divButton button{
+    background-color: rgba(0, 0, 0, 0.381);
+}
+
+.selectFilter{
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+    padding: 5px;
+    background-color: #37ff8a92;
+    color: black;
+}

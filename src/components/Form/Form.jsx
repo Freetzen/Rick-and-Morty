@@ -44,7 +44,7 @@ const Form = ({login}) => {
           value={inputData.email}
           onChange={handleChange}
           name="email"
-          class="input"
+          className="input"
           placeholder="Email..."
         ></input>
         {errors.email && <p className="errors">{errors.email}</p>}
@@ -56,19 +56,19 @@ const Form = ({login}) => {
           value={inputData.password}
           onChange={handleChange}
           name="password"
-          class="input"
+          className="input"
           placeholder="Password..."
         ></input>
         {errors.password && <p className="errors">{errors.password}</p>}
 
         <button 
-        class="button" 
+        className="button" 
         data-text="Awesome" 
         type="submit" 
         /* disabled={errors.email || errors.password} */>
 
-          <span class="actual-text">&nbsp;Submit&nbsp;</span>
-          <span aria-hidden="true" class="hover-text">
+          <span className="actual-text">&nbsp;Submit&nbsp;</span>
+          <span aria-hidden="true" className="hover-text">
             &nbsp;Submit&nbsp;
           </span>
 

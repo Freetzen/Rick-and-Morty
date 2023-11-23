@@ -27,18 +27,18 @@ export default function SearchBar({onSearch, logOut}) {
          name="text"
          value={id}
          onChange={handleChange}
-         class="input"
+         className="input"
          placeholder="Ingrese un ID"
        ></input>
-       <button class="button-search" data-text="Awesome" type='submit' onClick={handleSearch}>
-          <span class="actual-text-search">&nbsp;Agregar&nbsp;</span>
-          <span aria-hidden="true" class="hover-text-search">
+       <button className="button-search" data-text="Awesome" type='submit' onClick={handleSearch}>
+          <span className="actual-text-search">&nbsp;Agregar&nbsp;</span>
+          <span aria-hidden="true" className="hover-text-search">
             &nbsp;Agregar&nbsp;
           </span>
         </button>
-       <button class="button-search" data-text="Awesome" type='submit' onClick={logOut}>
-          <span class="actual-text-search">&nbsp;Logout&nbsp;</span>
-          <span aria-hidden="true" class="hover-text-search">
+       <button className="button-search" data-text="Awesome" type='submit' onClick={logOut}>
+          <span className="actual-text-search">&nbsp;Logout&nbsp;</span>
+          <span aria-hidden="true" className="hover-text-search">
             &nbsp;Logout&nbsp;
           </span>
         </button>

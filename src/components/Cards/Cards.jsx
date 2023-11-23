@@ -1,8 +1,24 @@
 import './Cards.css'
 import Card from '../Card/Card';
 
-export default function Cards({characters, onClose}) {
-   return <div className='cardP'>
+export default function Cards({characters, onClose, setCharacters}) {
+
+   const deleteAllChar = () => {
+      setCharacters([])
+   }
+
+   return <div >
+      <div className="divButton">
+         <button className="button-nav" data-text="Awesome" onClick={deleteAllChar}>
+          <span className="actual-text-nav">&nbsp;Clear&nbsp;</span>
+          <span className="hover-text-nav">
+            &nbsp;Clear&nbsp;
+          </span>
+        </button>
+        </div>
+
+      <div className='cardP'>
+      
       {
          characters.map((character, index) => {
             return <Card
@@ -18,5 +34,6 @@ export default function Cards({characters, onClose}) {
          />
          })
       }
+   </div>
    </div>
 }

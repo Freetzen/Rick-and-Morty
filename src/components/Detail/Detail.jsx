@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import Card from "../Card/Card"
+import './Detail.css'
 
 const Detail = () => {
 
@@ -24,10 +24,42 @@ const Detail = () => {
      }, [id]);
 
   return (
-    <div>
-      <h1>{character.name}</h1>
+    <div className="detailContainer">
+      {console.log(character)}
+      <div className="cardDetail">
+        <div>
+          <img src={character.image} alt={character.id} className="imgDetail" />
+        </div>
+
+        <div>
+          <h2 className="infoDetail">
+            <span className="Detail">Nombre: </span>
+            {character.name}
+          </h2>
+
+          <p className="infoDetail">
+            <span className="Detail">Estado: </span> {character.status}
+          </p>
+
+          <p className="infoDetail">
+            <span className="Detail">Especie: </span>
+            {character.species}
+          </p>
+
+          <p className="infoDetail">
+            <span className="Detail">Género: </span>
+            {character.gender}
+          </p>
+
+          <p className="infoDetail">
+            <span className="Detail">Creado: </span>
+            {character.created}
+          </p>
+        
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default Detail

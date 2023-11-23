@@ -1,0 +1,102 @@
+.detailContainer{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonLike{
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.imgDetail{
+    border-radius: 10px;
+}
+
+.cardDetail {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.478);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+  }
+
+  .cardDetail::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #37ff8a64 0%, #00dbde 100% );
+    filter: blur(20px);
+  }
+
+  
+  .cardDetail:hover::after {
+    filter: blur(30px);
+  }
+  
+  /* === removing default button style ===*/
+.button-delete {
+    margin: 0;
+    margin-top: 15px;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  /* button styling */
+  .button-delete {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color: #37FF8B;
+    --fs-size: 2em;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  /* this is the text, when you hover on button */
+  .hover-text-delete {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  /* hover */
+  .button-delete:hover .hover-text-delete {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+
+  .infoDetail{
+    color: #37FF8B;
+    font-size: 20px;
+  }
+
+  .Detail{
+    color: white;
+  }
