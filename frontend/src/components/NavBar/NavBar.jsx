@@ -6,10 +6,8 @@ import { Link } from 'react-router-dom'
 const NavBar = ({onSearch, logOut}) => {
 
   const random = () => {
-
-    var min = 1;
-    var max = 826;
-
+    const min = 1;
+    const max = 826;
     let x = Math.floor(Math.random() * (max - min + 1) + min);
 
     onSearch(x)

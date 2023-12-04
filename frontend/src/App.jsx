@@ -23,15 +23,23 @@ function App() {
 
    const [access, setAccess] = useState(false)
 
-   function login(userData) {
+   const login= async (userData) => {
       const { email, password } = userData;
       const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`)
-      .then(({ data }) => {
+      try {
+         const response = await axios(`${URL}?email=${email}&password=${password}`)
+         let data = response.data
          const { access } = data;
-         setAccess(data);
-         access && navigate('/home');
-      });
+         if(access){
+            setAccess(data);
+            access && navigate('/home');
+         }else{
+            alert('Email o Usuario incorrecto')
+         }
+      } catch (error) {
+         console.log(error.message)
+         return new Error(error)
+      }
    }
 
    const logOut = () => {

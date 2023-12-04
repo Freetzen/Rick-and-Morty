@@ -10,22 +10,27 @@ const Detail = () => {
     const {id} = useParams() // {id: 23}
 
     useEffect(() => {
-        axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-           ({ data }) => {
-              if (data.name) {
-               console.log(data)
-                 setCharacter(data);
-              } else {
-                 window.alert('No hay personajes con ese ID');
-              }
-           }
-        );
-        return setCharacter({});
-     }, [id]);
+      const effect = async () => {
+        try {
+          const response = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
+          const data = response.data;
+          console.log(data)
+          if (data.name) {
+            setCharacter(data);
+          }
+        } catch (error) {
+          window.alert("No hay personajes con ese ID");
+        }
+      }
+      
+      effect()
+      return setCharacter({});
+      
+    }, [id]);
+
 
   return (
     <div className="detailContainer">
-      {console.log(character)}
       <div className="cardDetail">
         <div>
           <img src={character.image} alt={character.id} className="imgDetail" />
@@ -54,6 +59,11 @@ const Detail = () => {
           <p className="infoDetail">
             <span className="Detail">Creado: </span>
             {character.created}
+          </p>
+
+          <p className="infoDetail">
+            <span className="Detail">ID: </span>
+            {character.id}
           </p>
         
         </div>
