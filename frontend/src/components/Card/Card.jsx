@@ -36,13 +36,13 @@ export default function Card(props) {
   
   return (
     <div className="cardPeque">
-      <div className="card" key={props.id}>
+      <div className="card" key={props.index}>
         <Link to={`/detail/${props.id}`}>
           <img src={props.image} alt={props.id} className="imgRaM" />
         </Link>
         <h2 className="infoRaM">
           <span className="desc">Nombre: </span>
-          {props.name.toUpperCase()}
+          {props.name}
         </h2>
 
         <p className="infoRaM">

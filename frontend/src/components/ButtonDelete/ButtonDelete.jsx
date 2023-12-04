@@ -1,18 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './ButtonDelete.css'
-import { removeAllFav } from '../../redux/actions'
 import { filterCards, orderCards } from '../../redux/actions';
 
 const ButtonDelete = () => {
 
     const dispatch = useDispatch();
 
-    const myFavorites = useSelector((state) => state.myFavorites.value);
+    const myFavorites = useSelector(state => state.myFavorites);
     console.log(myFavorites)
-
-    const handleClean = () => {
-      dispatch(removeAllFav());
-    };
 
     const handleOrder = (e) => {
       dispatch(orderCards(e.target.value));
@@ -24,12 +19,6 @@ const ButtonDelete = () => {
 
   return (
     <div className="divButton">
-        <button className="button-nav" data-text="Awesome" onClick={handleClean}>
-          <span className="actual-text-nav">&nbsp;UnFav&nbsp;</span>
-          <span className="hover-text-nav">
-            &nbsp;UnFav&nbsp;
-          </span>
-        </button>
 
         <div>
             <select name='order' onChange={handleOrder} className='selectFilter'>
