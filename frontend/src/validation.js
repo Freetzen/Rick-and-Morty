@@ -23,9 +23,4 @@ const validation = (input) => {
   return errors;
 };
 
-console.log(validation({
-    email: 'fede@asd.com',
-    password: 'a12sww'
-}))
-
 export default validation;

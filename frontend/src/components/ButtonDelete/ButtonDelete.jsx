@@ -7,7 +7,8 @@ const ButtonDelete = () => {
 
     const dispatch = useDispatch();
 
-    const myFavorites = useSelector((state) => state.myFavorites);
+    const myFavorites = useSelector((state) => state.myFavorites.value);
+    console.log(myFavorites)
 
     const handleClean = () => {
       dispatch(removeAllFav());

@@ -10,7 +10,7 @@ const Detail = () => {
     const {id} = useParams() // {id: 23}
 
     useEffect(() => {
-        axios(`https://rickandmortyapi.com/api/character/${id}?`).then(
+        axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
            ({ data }) => {
               if (data.name) {
                console.log(data)

@@ -20,7 +20,7 @@ export default function Cards({characters, onClose, setCharacters}) {
       <div className='cardP'>
       
       {
-         characters.map((character, index) => {
+         characters.map((character, index) => { // [{}, {}, {}, {}]
             return <Card
             key = {index}
             id={character.id}

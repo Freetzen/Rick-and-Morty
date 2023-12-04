@@ -51,7 +51,8 @@ function App() {
       if(characterId.length){
          return 
       }
-      axios(`https://rickandmortyapi.com/api/character/${id}?`).then(
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      .then(
          ({ data }) => {
             if (data.name) {
                setCharacters((characters) => [...characters, data]);

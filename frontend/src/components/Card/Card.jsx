@@ -36,7 +36,7 @@ export default function Card(props) {
   
   return (
     <div className="cardPeque">
-      <div className="card">
+      <div className="card" key={props.id}>
         <Link to={`/detail/${props.id}`}>
           <img src={props.image} alt={props.id} className="imgRaM" />
         </Link>

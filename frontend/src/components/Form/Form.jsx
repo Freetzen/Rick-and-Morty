@@ -38,6 +38,7 @@ const Form = ({login}) => {
     <div className="divForm">
       <form onSubmit={handleSubmit} className="formLogin">
         <label>Email</label>
+        {false && <p>Visible</p>}
         <input
           type="email"
           key="email"
